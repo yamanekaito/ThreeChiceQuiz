@@ -7,6 +7,7 @@
   const result = document.getElementById('result');
   const scoreLabel = document.querySelector('#result >p');
 
+  const numbers = ['問１','問２','問３'];
   const quizSet = shuffle([
     {q:'世界で一番大きな湖は？',c: ['カスピ海','カリブ海','琵琶湖']},
     {q:'２の８乗は？',c: ['256','1024','64']},
@@ -55,6 +56,10 @@
     }　　　//choicesの子要素がある限り、子要素の最初の要素を消していく
     //choices の子要素が無くなるまで処理が続く
 
+    while(number.firstChild) {
+      number.removeChild(number.firstChild);
+    }
+
     // 配列.foreach(x => {
     //  console.log(x);  //配列の要素すべてをコンソールに表示
     // })
@@ -73,8 +78,9 @@
     })
 
     const h1 = document.createElement('h1');
-    h1.textContent = '問１';
+    h1.textContent = numbers[currentNum];
     number.appendChild(h1);
+
 
     if (currentNum === quizSet.length -1 ) {
       btn.textContent = 'Show Score';
