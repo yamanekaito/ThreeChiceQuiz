@@ -10,6 +10,7 @@ body {
   background-color:#fff;
   border-radius:4px;
   padding:16px;
+  position:relative;
 }
 
 #question {
@@ -59,7 +60,7 @@ body {
 }
 
 
-#btn {
+#btn,#result > a {
   background:#3498db;
   padding:8px;
   border-radius:4px;
@@ -75,3 +76,38 @@ body {
   box-shadow:0 4px #bbb;
   opacity:0.7;
 }
+
+#result {
+  position:absolute;
+  width:300px;
+  background-color:#fff;
+  padding:30px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.2);    /* ぼかし　8px  本当に影みたいになる*/
+  top:50px;
+  left:0;
+  right:0;
+  margin:0 auto;
+  border-radius:4px;
+  text-align:center; 
+  transition:0.4s;
+}
+
+
+
+#result.hidden {     /* 　id = 'result'とclass='hidden'の両方を持っているものに対して */
+  transform:translateY(-500px);
+}
+
+#result > p {
+  font-size:24px;
+}
+
+
+
+#result > a {
+  display: block;
+  /* a要素を親要素いっぱいに広げる */
+  text-decoration: none;
+  /* a要素の下線を消した */
+}
+
